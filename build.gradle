@@ -17,10 +17,6 @@ dependencies {
     implementation files('lib/vault.jar')
 
 
-    compile 'org.springframework:spring-webmvc:3.2.2.RELEASE'
-    compile 'org.springframework:spring-core:3.2.2.RELEASE'
-    compile 'org.springframework:spring-web:3.2.2.RELEASE'
-    compile 'org.springframework:spring-core:3.2.2.RELEASE'
     compile 'org.mongodb:mongodb-driver:3.3.0'
     runtime 'javax.servlet:jstl:1.1.2'
 
@@ -31,14 +27,11 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
 
 }
-
 jar {
     manifest {
-        attributes(
-                'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
-                'Main-Class': 'by.d0mpi.firstplugin.Main'
-        )
+        attributes "Main-Class": "by.d0mpi.rebornPlugin.Main"
     }
+
     from {
         configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
     }
