@@ -54,7 +54,7 @@ public class Main extends JavaPlugin {
        // bookManager = new BookManager();
 
         PluginManager pm = getServer().getPluginManager();
-       // pm.registerEvents(new Handler(this), this);
+        pm.registerEvents(new MainHandler(this), this);
     //    pm.registerEvents(interfaceManager,this);
 
       //  Objects.requireNonNull(getCommand("heal")).setExecutor(new HealExecutor());
